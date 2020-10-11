@@ -14,3 +14,7 @@ type Person struct {
 func (p Person) UpdateSecret(secret string) {
 	p.secret = secret
 }
+
+func (p Person) GetSecretMethod() string {
+	return p.secret
+}
