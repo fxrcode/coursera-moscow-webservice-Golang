@@ -9,9 +9,9 @@ func getSomeVars() string {
 
 func main() {
 	defer fmt.Println("After work")
-	// defer func() {
-	// 	fmt.Println(getSomeVars())
-	// }()
-	defer fmt.Println(getSomeVars())
+	// defer fmt.Println(getSomeVars())
+	defer func() {
+		fmt.Println(getSomeVars())
+	}()
 	fmt.Println("Some userful work")
 }
