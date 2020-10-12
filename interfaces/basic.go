@@ -20,15 +20,17 @@ func (w *Wallet) Pay(amount int) error {
 	return nil
 }
 
-func Buy(p Payer) {
-	err := p.Pay(10)
+func Buy(p Payer, price int) {
+	fmt.Printf("Detail %#v\n\n", p)
+
+	err := p.Pay(price)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("Спасибо за покупку через %T\n\n", p)
+	fmt.Printf("Спасибо за покупку через %T, detail %#v\n\n", p, p)
 }
 
 func main() {
 	myWallet := &Wallet{Cash: 100}
-	Buy(myWallet)
+	Buy(myWallet, 10)
 }
