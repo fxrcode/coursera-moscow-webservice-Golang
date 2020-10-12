@@ -39,7 +39,8 @@ func deferTest() {
 	defer func() {
 		if err := recover(); err != nil {
 			fmt.Println("panic happend SECOND:", err)
-			// panic("second panic")
+			// panic(2)
+			panic("second panic")
 		}
 	}()
 	fmt.Println("Some userful work")
@@ -50,7 +51,7 @@ func deferTest() {
 func main() {
 	// deferTest1()
 	// deferTest2()
-	deferTest3()
-	// deferTest()
+	// deferTest3()
+	deferTest()
 	return
 }
