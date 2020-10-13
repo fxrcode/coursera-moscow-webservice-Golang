@@ -64,6 +64,7 @@ func Buy(p Payer) {
 	case *Wallet:
 		fmt.Println("Оплата наличными?")
 	case *Card:
+		// fmt.Println("Can't access directly to field without cast", p.Cardholder)
 		plasticCard, ok := p.(*Card)
 		if !ok {
 			fmt.Println("Не удалось преобразовать к типу *Card")

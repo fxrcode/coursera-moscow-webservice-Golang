@@ -75,7 +75,7 @@ func main() {
 	myWallet := &Wallet{Cash: 100}
 	Buy(myWallet)
 
-	var myMoney Payer
+	var myMoney Payer // see here the interface var, no need of interface pointer type.
 	myMoney = &Card{Balance: 100, Cardholder: "rvasily"}
 	Buy(myMoney)
 
