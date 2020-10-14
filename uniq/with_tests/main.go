@@ -25,8 +25,7 @@ func uniq(input io.Reader, output io.Writer) error {
 }
 
 func main() {
-	err := uniq(os.Stdin, os.Stdout)
-	if err != nil {
+	if err := uniq(os.Stdin, os.Stdout); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
