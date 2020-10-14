@@ -17,6 +17,10 @@ func (w *Wallet) Pay(amount int) error {
 	return nil
 }
 
+// type Stringer interface {
+// 	String() string
+// }
+
 func (w *Wallet) String() string {
 	return "Кошелёк в котором " + strconv.Itoa(w.Cash) + " денег"
 }

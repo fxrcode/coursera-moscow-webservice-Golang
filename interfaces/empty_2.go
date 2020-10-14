@@ -35,16 +35,16 @@ func Buy(in interface{}) {
 	var p Payer
 	var ok bool
 	if p, ok = in.(Payer); !ok {
-		fmt.Printf("%T не не является платежным средством\n\n", in)
+		fmt.Printf("Error cast: %T не не является платежным средством\n\n", in)
 		return
 	}
 
 	err := p.Pay(10)
 	if err != nil {
-		fmt.Printf("Ошибка при оплате %T: %v\n\n", p, err)
+		fmt.Printf("Error Pay: Ошибка при оплате %T: %v\n\n", p, err)
 		return
 	}
-	fmt.Printf("Спасибо за покупку через %T\n\n", p)
+	fmt.Printf("Good: Спасибо за покупку через %T\n\n", p)
 
 }
 
