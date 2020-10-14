@@ -42,12 +42,11 @@ type NFCPhone interface {
 // --------------
 
 func PayForMetwiWithPhone(phone NFCPhone) {
-	err := phone.Pay(1)
-	if err != nil {
-		fmt.Printf("Ошибка при оплате %v\n\n", err)
+	if err := phone.Pay(1); err != nil {
+		fmt.Printf("Error cast: Ошибка при оплате %v\n\n", err)
 		return
 	}
-	fmt.Printf("Турникет открыт через %T\n\n", phone)
+	fmt.Printf("Good: Турникет открыт через %T\n\n", phone)
 }
 
 // --------------
