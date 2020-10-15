@@ -26,12 +26,10 @@ var testFailInput = `1
 func TestOK(t *testing.T) {
 	in := bytes.NewBufferString(testOkInput)
 	out := bytes.NewBuffer(nil)
-	err := uniq(in, out)
-	if err != nil {
+	if err := uniq(in, out); err != nil {
 		t.Errorf("Test OK failed: %s", err)
 	}
-	result := out.String()
-	if result != testOkResult {
+	if result := out.String(); result != testOkResult {
 		t.Errorf("Test OK failed, result not match")
 	}
 }
