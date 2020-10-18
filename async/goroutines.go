@@ -15,6 +15,7 @@ const (
 func doSomeWork(in int) {
 	for j := 0; j < iterationsNum; j++ {
 		fmt.Printf(formatWork(in, j))
+		runtime.Gosched() // here you go Gosched() => task scheduler.
 	}
 }
 
@@ -29,6 +30,7 @@ func main() {
 		// 	}
 		// }(i)
 	}
+
 	fmt.Scanln()
 }
 
