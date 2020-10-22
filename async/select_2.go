@@ -10,7 +10,7 @@ func main() {
 	ch1 <- 2
 	ch2 := make(chan int, 2)
 	ch2 <- 3
-LOOP:
+	// LOOP:
 	for {
 		select {
 		case v1 := <-ch1:
@@ -18,7 +18,9 @@ LOOP:
 		case v2 := <-ch2:
 			fmt.Println("chan2 val", v2)
 		default:
+			fmt.Println("break LOOP")
 			break LOOP
+			// break (this only break select, not for!)
 		}
 	}
 }
