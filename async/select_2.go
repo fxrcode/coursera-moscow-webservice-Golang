@@ -10,7 +10,7 @@ func main() {
 	ch1 <- 2
 	ch2 := make(chan int, 2)
 	ch2 <- 3
-	// LOOP:
+LOOP:
 	for {
 		select {
 		case v1 := <-ch1:

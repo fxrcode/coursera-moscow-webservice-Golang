@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	cancelCh := make(chan struct{})
+	cancelCh := make(chan struct{}) // empty struct is just a sign, means something.
 	dataCh := make(chan int)
 
 	go func(cancelCh chan struct{}, dataCh chan int) {
@@ -15,7 +15,10 @@ func main() {
 			case <-cancelCh:
 				return
 			case dataCh <- val:
+				fmt.Println("Here I push:", val)
 				val++
+				// default:
+				// 	fmt.Println("default select")
 			}
 		}
 	}(cancelCh, dataCh)
@@ -26,6 +29,8 @@ func main() {
 			fmt.Println("send cancel")
 			cancelCh <- struct{}{}
 			break
+		} else {
+			fmt.Println("curVal: ", curVal)
 		}
 	}
 
