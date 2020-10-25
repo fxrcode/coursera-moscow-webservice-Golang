@@ -16,12 +16,13 @@ func longSQLQuery() chan bool {
 
 func main() {
 	// при 1 выполнится таймаут, при 3 - выполнится операция
-	// timer := time.NewTimer(3 * time.Second)
-	timer := time.NewTimer(1 * time.Second)
+	// timer := time.NewTimer(1 * time.Second)
+	timer := time.NewTimer(3 * time.Second)
+
 	select {
 	case <-timer.C:
 		fmt.Println("timer.C timeout happend")
-	case <-time.After(time.Minute):
+	case <-time.After(1 * time.Minute):
 		// пока не выстрелит - не соберётся сборщиком мусора
 		fmt.Println("time.After timeout happend")
 	case result := <-longSQLQuery():
