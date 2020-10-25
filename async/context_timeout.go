@@ -20,7 +20,7 @@ func worker(ctx context.Context, workerNum int, out chan<- int) {
 }
 
 func main() {
-	workTime := 50 * time.Millisecond
+	workTime := 33 * time.Millisecond
 	ctx, _ := context.WithTimeout(context.Background(), workTime)
 	result := make(chan int, 1)
 
