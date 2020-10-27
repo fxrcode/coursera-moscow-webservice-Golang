@@ -8,12 +8,12 @@ func main() {
 	in := make(chan int, 0)
 
 	go func(out chan<- int) {
-		for i := 0; i <= 10; i++ {
+		for i := 0; i <= 4; i++ {
 			fmt.Println("before", i)
 			out <- i
 			fmt.Println("after", i)
 		}
-		close(out)
+		// close(out)
 		fmt.Println("generator finish")
 	}(in)
 

@@ -1,14 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
+	// ch1 := make(chan int)
 	ch1 := make(chan int, 1)
 
 	go func(in chan int) {
+		// for {
 		val := <-in
 		fmt.Println("GO: get from chan", val)
 		fmt.Println("GO: after read from chan")
+		// }
 	}(ch1)
 
 	ch1 <- 42
