@@ -7,6 +7,7 @@ import (
 
 func getComments() chan string {
 	// надо использовать буферизированный канал
+	// result := make(chan string) // unbuffered chan may have goroutine leak if this function has exception
 	result := make(chan string, 1)
 	go func(out chan<- string) {
 		time.Sleep(2 * time.Second)
