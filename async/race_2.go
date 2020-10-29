@@ -18,7 +18,7 @@ func main() {
 		}(counters, i, mu)
 	}
 	fmt.Scanln()
-	mu.Lock()
+	// mu.Lock()
 	fmt.Println("counters result", counters)
-	mu.Unlock()
+	// mu.Unlock()
 }
