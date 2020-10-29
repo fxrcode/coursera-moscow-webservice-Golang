@@ -17,7 +17,7 @@ func startWorker(in int, wg *sync.WaitGroup) {
 	defer wg.Done() // wait_2.go уменьшаем счетчик на 1
 	for j := 0; j < iterationsNum; j++ {
 		fmt.Printf(formatWork(in, j))
-		runtime.Gosched()
+		runtime.Gosched() // see you yield again~
 	}
 }
 
