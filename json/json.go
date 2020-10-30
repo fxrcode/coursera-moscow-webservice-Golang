@@ -8,7 +8,7 @@ import (
 type User struct {
 	ID       int
 	Username string
-	phone    string
+	phone    string // it's private!
 }
 
 var jsonStr = `{"id": 42, "username": "rvasily", "phone": "123"}`
