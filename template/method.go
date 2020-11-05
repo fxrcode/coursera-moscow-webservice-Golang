@@ -31,6 +31,7 @@ func main() {
 		User{1, "Vasily", true},
 		User{2, "Ivan", false},
 		User{3, "Dmitry", true},
+		User{105006, "O715311", true},
 	}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {

@@ -26,7 +26,7 @@ func main() {
 		tmpl.Execute(w,
 			struct {
 				Users []User
-			}{
+			}{ // in-place struct variable, so we don't need to declare type outside.
 				users,
 			})
 	})
