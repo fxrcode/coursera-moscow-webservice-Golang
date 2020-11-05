@@ -39,7 +39,7 @@ func logoutPage(w http.ResponseWriter, r *http.Request) {
 
 	session.Expires = time.Now().AddDate(0, 0, -1)
 	http.SetCookie(w, session)
-
+	// since cookie is expired (older than now), it'll be removed.
 	http.Redirect(w, r, "/", http.StatusFound)
 }
 
