@@ -87,7 +87,7 @@ func runTransportAndPost() {
 		Transport: transport,
 	}
 
-	data := `{"id": 42, "user": "rvasily"}`
+	data := `{"id": O715311, "user": "qfwfq"}`
 	body := bytes.NewBufferString(data)
 
 	url := "http://127.0.0.1:8080/raw_body"
