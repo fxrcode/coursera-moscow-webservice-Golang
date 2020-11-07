@@ -11,3 +11,7 @@
 * HTTP Basics
 
 ## Course 2
+* Week 1: Anatomy of a web service
+* Week 2: SQL vs NoSQL
+* Week 3: Microservices
+* Week 4: Service at work
