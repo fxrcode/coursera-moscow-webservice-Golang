@@ -3,14 +3,15 @@ package main
 import (
 	"encoding/xml"
 	"fmt"
-	"gopkg.in/telegram-bot-api.v4"
 	"io/ioutil"
 	"net/http"
+
+	tgbotapi "gopkg.in/telegram-bot-api.v4"
 )
 
 const (
-	BotToken   = "310805560:AAENzjDSJPKABY9Hw1GZOdKBxxrhOHkfo_k"
-	WebhookURL = "https://ea731f5c.ngrok.io"
+	BotToken   = "1447856888:AAHTIlc8EvuDxxxxxbECB3BNmEBWhfsX_FF"
+	WebhookURL = "https://202bab9xxxx.ngrok.io"
 )
 
 var rss = map[string]string{
