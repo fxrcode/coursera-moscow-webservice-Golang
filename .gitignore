@@ -1,2 +1,4 @@
 codegen/pack/marshaller.go
 pprof/pprof_1
+pprof/pprof_2
+pprof/goroutines.txt
